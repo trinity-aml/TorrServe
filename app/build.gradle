@@ -13,11 +13,11 @@ freeProperties.load(new FileInputStream(freeKeystorePropertiesFile))
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "ru.yourok.torrserve"
+        applicationId "ru.yourok.torrserve11x"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 86
-        versionName "1.1.86"
+        versionCode 87
+        versionName "1.1.87"
     }
     signingConfigs {
         release {
@@ -96,7 +96,7 @@ class WriteVersion implements Plugin<Project> {
  "Version": "${version}",
  "VersionCode": "${versionCode}",
  "BuildDate": "${new SimpleDateFormat("dd.MM.yyyy").format(new Date())}",
- "Link": "https://github.com/YouROK/TorrServe/releases/download/${version}/TorrServe_${version}.apk"
+ "Link": "https://github.com/trinity-aml/TorrServe/releases/download/${version}/TorrServe_${version}.apk"
 }
 """
                 stringsFile.write(json)

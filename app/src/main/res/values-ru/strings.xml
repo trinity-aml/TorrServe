@@ -37,6 +37,7 @@
     <string name="disable_upnp">Отключить UPNP</string>
     <string name="disable_dht">Отключить DHT</string>
     <string name="disable_upload">Отключить раздачу</string>
+	<string name="choosestrategy">Выбор стратегии загрузки торрента</string>
     <string name="ecnryption">Шифрование</string>
     <string name="connections_limit">Соединений на торрент (20-25 рекомендуется на всех Android устройствах)</string>
     <string name="connections_dht_limit">Лимит соединений DHT (0-не ограничено, на версиях до 70-й без ограничений)</string>
@@ -122,7 +123,11 @@
         <item>Удалять ретрекеры</item>
         <item>Заменить ретрекеры</item>
     </string-array>
-
+	<string-array name="choosestrategy_mode">
+        <item>По-умолчанию (самая сбалансированная, нет перерасхода трафика)</item>
+        <item>Fastest (самая быстрая, но перерасход трафика в 2 раза</item>
+        <item>Fuzzing (быстрее чем по-умолчанию, перерасход трафика до 1,5 раза</item>
+    </string-array>
     <string-array name="encryption_mode">
         <item>Включено</item>
         <item>Отключено</item>

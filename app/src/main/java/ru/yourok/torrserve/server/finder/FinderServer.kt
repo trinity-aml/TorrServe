@@ -75,10 +75,10 @@ class FinderServer {
                     index = count
                     count++
                 }
-                checkHost = "http://$ipFind$index:8090"
+                checkHost = "http://$ipFind$index:8091"
 
                 if (ipFind + index == iface.address.hostAddress)
-                    checkHost = "http://127.0.0.1:8090"
+                    checkHost = "http://127.0.0.1:8091"
                 try {
                     val version = Http("$checkHost/echo").readTimeout(5000)
                     if (version.isNotEmpty())

@@ -28,8 +28,8 @@ object Updater {
     private var lastCheckServer: Long = 0
     private var lastCheckApk: Long = 0
 
-    private val apkRelease = "https://raw.githubusercontent.com/YouROK/TorrServe/master/release.json"
-    private val serverRelease = "https://raw.githubusercontent.com/YouROK/TorrServer/master/release.json"
+    private val apkRelease = "https://raw.githubusercontent.com/trinity-aml/TorrServe/master/release.json"
+    private val serverRelease = "https://raw.githubusercontent.com/trinity-aml/TorrServer/master/release.json"
 
     fun checkLocalVersion() {
         if (!ServerFile.serverExists())
@@ -154,7 +154,7 @@ object Updater {
             throw IOException("error check remote version")
 
         val url: String
-        url = serverJS.getJSONObject("Links").getString("android$androidVer-$arch")
+        url = serverJS.getJSONObject("Links").getString("linux-$arch")
 
         val http = Http(url)
         http.getEntity().apply {

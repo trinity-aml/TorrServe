@@ -37,6 +37,7 @@
     <string name="disable_upnp">Disable UPNP</string>
     <string name="disable_dht">Disable DHT</string>
     <string name="disable_upload">Disable Upload</string>
+	<string name="choosestrategy">Choose torrent`s download strategy</string>
     <string name="ecnryption">Ecnryption</string>
     <string name="connections_limit">Torrent connections (20-25 recommended on all Android devices)</string>
     <string name="connections_dht_limit">Limit of DHT connections (0-unlimited, on versions up to 70th unlimited)</string>
@@ -122,7 +123,11 @@
         <item>Remove retrackers</item>
         <item>Replace retrackers</item>
     </string-array>
-
+    <string-array name="choosestrategy_mode">
+        <item>Default</item>
+        <item>Fastest</item>
+        <item>Fuzzing</item>
+    </string-array>
     <string-array name="encryption_mode">
         <item>Enabled</item>
         <item>Disabled</item>

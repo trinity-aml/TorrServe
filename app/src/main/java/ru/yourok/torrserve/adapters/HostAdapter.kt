@@ -26,7 +26,7 @@ class HostAdapter(val onClick: (host: String) -> Unit) : RecyclerView.Adapter<Ho
         }
         thread {
             if (ServerFile.serverExists()) {
-                hosts.add(0, ServerIp("http://127.0.0.1:8090", App.getContext().getString(R.string.local_server)))
+                hosts.add(0, ServerIp("http://127.0.0.1:8091", App.getContext().getString(R.string.local_server)))
                 try {
                     notifyItemInserted(0)
                 } catch (e: Exception) {

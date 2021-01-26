@@ -43,7 +43,7 @@ object Preferences {
     }
 
     fun getCurrentHost(): String {
-        return get("CurrentHost", "http://localhost:8090") as String
+        return get("CurrentHost", "http://localhost:8091") as String
     }
 
     fun setCurrentHost(addr: String) {

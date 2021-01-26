@@ -36,7 +36,7 @@ func main() {
 	js.BuildDate = time.Now().Format("02.01.2006")
 	//https://github.com/YouROK/TorrServe/releases/download/1.1.66/TorrServe_1.1.66.apk
 	
-	js.Link = "https://github.com/YouROK/TorrServe/releases/download/" + release_version + "/" + js.Name+"_"+release_version+".apk"
+	js.Link = "https://github.com/trinity-aml/TorrServe/releases/download/" + release_version + "/" + js.Name+"_"+release_version+".apk"
 		
 	buf, err := json.MarshalIndent(&js, "", " ")
 	if err != nil {

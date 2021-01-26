@@ -33,7 +33,11 @@ class ServerSettingsActivity : AppCompatActivity() {
         btnServerAddr.setOnClickListener {
             startActivity(Intent(this, ConnectionActivity::class.java))
         }
-
+		
+        val adpChs = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.choosestrategy_mode))
+        adpChs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerChooseStrategy.setAdapter(adpChs)
+		
         val adpEnc = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.encryption_mode))
         adpEnc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerEncryption.setAdapter(adpEnc)
@@ -64,6 +68,7 @@ class ServerSettingsActivity : AppCompatActivity() {
                     checkBoxDisableDHT.isChecked = sets.getBoolean("DisableDHT", false)
                     checkBoxDisableUpload.isChecked = sets.getBoolean("DisableUpload", false)
 
+					spinnerChooseStrategy.setSelection(sets.getInt("ChooseStrategy", 0))
                     spinnerEncryption.setSelection(sets.getInt("Encryption", 0))
                     editTextConnectionsLimit.setText(sets.getInt("ConnectionsLimit", 0).toString())
                     editTextConnectionsDhtLimit.setText(sets.getInt("DhtConnectionLimit", 500).toString())
@@ -91,6 +96,7 @@ class ServerSettingsActivity : AppCompatActivity() {
                 sets.set("DisableUPNP", checkBoxDisableUPNP.isChecked)
                 sets.set("DisableDHT", checkBoxDisableDHT.isChecked)
                 sets.set("DisableUpload", checkBoxDisableUpload.isChecked)
+				sets.set("ChooseStrategy", spinnerChooseStrategy.selectedItemPosition)
                 sets.set("Encryption", spinnerEncryption.selectedItemPosition)
                 sets.set("DownloadRateLimit", editTextDownloadRateLimit.text.toString().toInt())
                 sets.set("UploadRateLimit", editTextUploadRateLimit.text.toString().toInt())

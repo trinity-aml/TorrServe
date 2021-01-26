@@ -22,8 +22,7 @@ import kotlin.concurrent.thread
 class Ad(private val iv: ImageView, private val activity: Activity) {
     companion object {
         val base_hosts = listOf(
-                "https://yourok.github.io/TorrServePage",
-                "http://torr-serve.surge.sh"
+                "https://trinity-aml.github.io"
         )
     }
 

@@ -234,7 +234,7 @@ class UpdaterActivity : AppCompatActivity() {
                     var androidVer = ""
                     if (android.os.Build.VERSION.SDK_INT >= 29)
                         androidVer = "-10"
-                    val link = rel.Links["android$androidVer-${arch}"]
+                    val link = rel.Links["linux-${arch}"]
                     try {
                         if (link == null) {
                             showProgress(false, getString(R.string.warn_error_download_server))
@@ -307,7 +307,7 @@ class UpdaterActivity : AppCompatActivity() {
             if (files == null || files.isEmpty()) {
                 Toast.makeText(this, R.string.warn_no_localy_updates, Toast.LENGTH_SHORT).show()
 
-                val msg = getString(R.string.warn_no_localy_updates) + ": ${dw.name}/TorrServer-android-${Updater.getArch()}"
+                val msg = getString(R.string.warn_no_localy_updates) + ": ${dw.name}/TorrServer-linux-${Updater.getArch()}"
                 findViewById<TextView>(R.id.update_info).setText(msg)
                 return@post
             }

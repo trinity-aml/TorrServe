@@ -22,7 +22,7 @@ object Players {
 
     private fun getList(mime: String): List<Player> {
         val intent = Intent(Intent.ACTION_VIEW)
-        intent.setDataAndType(Uri.parse("http://127.0.0.1:8090/torrent/file.mp4"), mime)
+        intent.setDataAndType(Uri.parse("http://127.0.0.1:8091/torrent/file.mp4"), mime)
         val apps = App.getContext().packageManager.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY)
         val list = mutableListOf<Player>()
         for (a in apps) {

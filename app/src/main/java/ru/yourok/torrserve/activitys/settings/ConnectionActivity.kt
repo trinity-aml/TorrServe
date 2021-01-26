@@ -63,7 +63,7 @@ class ConnectionActivity : AppCompatActivity() {
                     host = "http://$host"
 
                 if (uri.port == -1)
-                    host += ":8090"
+                    host += ":8091"
 
                 Preferences.setCurrentHost(host)
 

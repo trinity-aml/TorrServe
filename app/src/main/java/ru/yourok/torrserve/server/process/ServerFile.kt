@@ -34,11 +34,11 @@ object ServerFile {
             if (shell == null) {
                 val path = Path.getAppPath()
                 if (Preferences.isExecRootServer()) {
-                    shell = Shell.su("${servPath.path} -k -d ${Path.getAppPath()} > ${path}/torrserver.log 2>&1")
+                    shell = Shell.su("${servPath.path} -p 8091 -k -d ${Path.getAppPath()} > ${path}/torrserver.log 2>&1")
                 } else {
                     val sh = Shell.newInstance("sh")
                     shell = sh.newJob()
-                    shell?.add("${servPath.path} -k -d ${Path.getAppPath()} > ${path}/torrserver.log 2>&1")
+                    shell?.add("${servPath.path} -p 8091 -k -d ${Path.getAppPath()} > ${path}/torrserver.log 2>&1")
                 }
                 shell?.add("export GODEBUG=madvdontneed=1")
                 shell?.submit()
