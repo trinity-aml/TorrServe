@@ -33,11 +33,11 @@ class ServerSettingsActivity : AppCompatActivity() {
         btnServerAddr.setOnClickListener {
             startActivity(Intent(this, ConnectionActivity::class.java))
         }
-		
+
         val adpChs = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.choosestrategy_mode))
         adpChs.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerChooseStrategy.setAdapter(adpChs)
-		
+
         val adpEnc = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.encryption_mode))
         adpEnc.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinnerEncryption.setAdapter(adpEnc)
@@ -62,13 +62,16 @@ class ServerSettingsActivity : AppCompatActivity() {
                     editTextPreloadBufferSize.setText((sets.getLong("PreloadBufferSize", 0) / (1024 * 1024)).toString())
                     spinnerRetracker.setSelection(sets.getInt("RetrackersMode", 0))
 
+		    checkBoxEnableIPv6.isChecked = sets.getBoolean("EnableIPv6", false)
                     checkBoxDisableTCP.isChecked = sets.getBoolean("DisableTCP", false)
                     checkBoxDisableUTP.isChecked = sets.getBoolean("DisableUTP", false)
                     checkBoxDisableUPNP.isChecked = sets.getBoolean("DisableUPNP", false)
                     checkBoxDisableDHT.isChecked = sets.getBoolean("DisableDHT", false)
                     checkBoxDisableUpload.isChecked = sets.getBoolean("DisableUpload", false)
 
-					spinnerChooseStrategy.setSelection(sets.getInt("ChooseStrategy", 0))
+		    spinnerChooseStrategy.setSelection(sets.getInt("ChooseStrategy", 0))
+		    editTextTimeStrategy.setText(sets.getInt("TimeStrategy", 5).toString())
+		    editTextPeersListenPort.setText(sets.getInt("PeersListenPort", 0).toString())
                     spinnerEncryption.setSelection(sets.getInt("Encryption", 0))
                     editTextConnectionsLimit.setText(sets.getInt("ConnectionsLimit", 0).toString())
                     editTextConnectionsDhtLimit.setText(sets.getInt("DhtConnectionLimit", 500).toString())
@@ -91,12 +94,15 @@ class ServerSettingsActivity : AppCompatActivity() {
                 sets.set("CacheSize", editTextCacheSize.text.toString().toLong() * (1024 * 1024))
                 sets.set("PreloadBufferSize", editTextPreloadBufferSize.text.toString().toLong() * (1024 * 1024))
                 sets.set("RetrackersMode", spinnerRetracker.selectedItemPosition)
+		sets.set("EnableIPv6", checkBoxEnableIPv6.isChecked)
                 sets.set("DisableTCP", checkBoxDisableTCP.isChecked)
                 sets.set("DisableUTP", checkBoxDisableUTP.isChecked)
                 sets.set("DisableUPNP", checkBoxDisableUPNP.isChecked)
                 sets.set("DisableDHT", checkBoxDisableDHT.isChecked)
                 sets.set("DisableUpload", checkBoxDisableUpload.isChecked)
-				sets.set("ChooseStrategy", spinnerChooseStrategy.selectedItemPosition)
+		sets.set("ChooseStrategy", spinnerChooseStrategy.selectedItemPosition)
+		sets.set("TimeStrategy", editTextTimeStrategy.text.toString().toInt())
+		sets.set("PeersListenPort", editTextPeersListenPort.text.toString().toInt())
                 sets.set("Encryption", spinnerEncryption.selectedItemPosition)
                 sets.set("DownloadRateLimit", editTextDownloadRateLimit.text.toString().toInt())
                 sets.set("UploadRateLimit", editTextUploadRateLimit.text.toString().toInt())

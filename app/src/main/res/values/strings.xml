@@ -32,12 +32,15 @@
     <string name="cache_size">Cache size (Megabytes)</string>
     <string name="preload_buffer_size">Preload Buffer Size (Megabytes)</string>
     <string name="read_ahead_prc">Read ahead %</string>
+	<string name="enable_ipv6">Enable IPv6</string>
     <string name="disable_tcp">Disable TCP</string>
     <string name="disable_utp">Disable UTP (recommended on weak devices)</string>
     <string name="disable_upnp">Disable UPNP</string>
     <string name="disable_dht">Disable DHT</string>
     <string name="disable_upload">Disable Upload</string>
 	<string name="choosestrategy">Choose torrent`s download strategy</string>
+	<string name="time_strategy">Timeout for default strategy</string>
+	<string name="peerslisten_port">Peer`s listen port (if 0, will be random)</string>
     <string name="ecnryption">Ecnryption</string>
     <string name="connections_limit">Torrent connections (20-25 recommended on all Android devices)</string>
     <string name="connections_dht_limit">Limit of DHT connections (0-unlimited, on versions up to 70th unlimited)</string>

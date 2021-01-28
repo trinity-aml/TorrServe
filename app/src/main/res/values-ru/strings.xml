@@ -32,12 +32,15 @@
     <string name="cache_size">Размер кэша (Мегабайты)</string>
     <string name="preload_buffer_size">Размер буфера предварительной загрузки (Мегабайты)</string>
     <string name="read_ahead_prc">Упреждающее чтение %</string>
+	<string name="enable_ipv6">Включить IPv6</string>
     <string name="disable_tcp">Отключить TCP</string>
     <string name="disable_utp">Отключить UTP (рекомендуется на слабых устройствах)</string>
     <string name="disable_upnp">Отключить UPNP</string>
     <string name="disable_dht">Отключить DHT</string>
     <string name="disable_upload">Отключить раздачу</string>
 	<string name="choosestrategy">Выбор стратегии загрузки торрента</string>
+	<string name="time_strategy">Таймаут стратегии по-дефолту</string>
+	<string name="peerslisten_port">Порт для входящих торрент подключений</string>
     <string name="ecnryption">Шифрование</string>
     <string name="connections_limit">Соединений на торрент (20-25 рекомендуется на всех Android устройствах)</string>
     <string name="connections_dht_limit">Лимит соединений DHT (0-не ограничено, на версиях до 70-й без ограничений)</string>
@@ -124,9 +127,9 @@
         <item>Заменить ретрекеры</item>
     </string-array>
 	<string-array name="choosestrategy_mode">
-        <item>По-умолчанию (самая сбалансированная, нет перерасхода трафика)</item>
-        <item>Fastest (самая быстрая, но перерасход трафика в 2 раза</item>
-        <item>Fuzzing (быстрее чем по-умолчанию, перерасход трафика до 1,5 раза</item>
+        <item>По-умолчанию (нет перерасхода трафика)</item>
+        <item>Fastest (самая быстрая стратегия, перерасход трафика 2,0)</item>
+        <item>Fuzzing (быстрее чем по-умолчанию, перерасход трафика 1,5)</item>
     </string-array>
     <string-array name="encryption_mode">
         <item>Включено</item>

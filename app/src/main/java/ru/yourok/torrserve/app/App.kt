@@ -54,7 +54,7 @@ class App : Application() {
         wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "TorrServe:WakeLock")
 
         ACR.get(this)
-                .setEmailAddresses("8yourok8@gmail.com")
+                .setEmailAddresses("trinity1980@fex.net")
                 .setEmailSubject(getString(R.string.app_name) + " Crash Report")
                 .start()
     }

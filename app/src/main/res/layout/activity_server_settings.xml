@@ -65,6 +65,12 @@
                 android:ems="10"
                 android:inputType="numberSigned" />
 
+			<CheckBox
+                android:id="@+id/checkBoxEnableIPv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/enable_ipv6" />
+
             <CheckBox
                 android:id="@+id/checkBoxDisableTCP"
                 android:layout_width="match_parent"
@@ -104,6 +110,34 @@
 
             <Spinner
                 android:id="@+id/spinnerChooseStrategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberSigned" />
+
+			<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/editTextCacheSize"
+                android:paddingStart="5dp"
+                android:text="@string/time_strategy" />
+
+            <EditText
+                android:id="@+id/editTextTimeStrategy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="numberSigned" />
+
+			<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:labelFor="@+id/editTextCacheSize"
+                android:paddingStart="5dp"
+                android:text="@string/peerslisten_port" />
+
+            <EditText
+                android:id="@+id/editTextPeersListenPort"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
